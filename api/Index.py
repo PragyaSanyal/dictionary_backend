@@ -2,10 +2,13 @@ from flask import Flask
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 import requests
+from flask_cors import CORS, cross_origin
 import re
 app=Flask(__name__)
 
 
+
+@cross_origin()
 @app.route('/')
 @app.route('/<string:word>')
 def get_all_data(word=' '):
